@@ -12,7 +12,9 @@ public class JavaPractice {
 //       countOdds(1,10);
 //       countEvens(1,10);
 //        isVowel();
-        simpleVowelCheck("ab");
+//        isVowel("ab");
+//        hasVowel("Tacos");
+        countVowels("Tacos");
 //END OF METHOD CALLS
     }
 //BUILD YOUR METHODS HERE
@@ -97,38 +99,66 @@ public class JavaPractice {
             return evens;
         }
          //Write a method named isVowel() that accepts a String input of length 1 and returns a boolean if that         string is a vowel other than "y".
-        public static boolean isVowel(){
-            Scanner scan = new Scanner(System.in).useDelimiter("\n");
-            System.out.println("Please type a single letter.");
-            String userInput=scan.next();
-                if (userInput.length()!=1){
-                    System.out.println("Please type a single letter.");
-                    return isVowel();
-                }
-                boolean vowelCheck = (userInput.equalsIgnoreCase("a") ||
-                        userInput.equalsIgnoreCase("e") ||
-                        userInput.equalsIgnoreCase("i") ||
-                        userInput.equalsIgnoreCase("o") ||
-                        userInput.equalsIgnoreCase("u") );
+//        public static boolean checkForVowel(){
+//            Scanner scan = new Scanner(System.in).useDelimiter("\n");
+//            System.out.println("Please type a single letter.");
+//            String userInput=scan.next();
+//                if (userInput.length()!=1){
+//                    System.out.println("Please type a single letter.");
+//                    return isVowel();
+//                }
+//                boolean vowelCheck = (userInput.equalsIgnoreCase("a") ||
+//                        userInput.equalsIgnoreCase("e") ||
+//                        userInput.equalsIgnoreCase("i") ||
+//                        userInput.equalsIgnoreCase("o") ||
+//                        userInput.equalsIgnoreCase("u") );
+//
+//                if (vowelCheck){
+//                    System.out.println("You entered: " + userInput);
+//                    System.out.println("That IS a vowel!");
+//                    return (vowelCheck);
+//                } else {
+//                    System.out.println("You entered: " + userInput);
+//                    System.out.println("That is NOT a vowel!");
+//                    return (vowelCheck);
+//                }
+//        }
 
-                if (vowelCheck){
-                    System.out.println("You entered: " + userInput);
-                    System.out.println("That IS a vowel!");
-                    return (vowelCheck);
-                } else {
-                    System.out.println("You entered: " + userInput);
-                    System.out.println("That is NOT a vowel!");
-                    return (vowelCheck);
-                }
-        }
-        public static boolean simpleVowelCheck(String a){
+        // Write a method named isVowel() that accepts a String input of length 1 and returns a boolean if that         string is a vowel other than "y".
+        // public static boolean checkForVowel(){
+        public static boolean isVowel(String a){
             boolean vowelCheck = (a.equalsIgnoreCase("a") ||
                     a.equalsIgnoreCase("e") ||
                     a.equalsIgnoreCase("i") ||
                     a.equalsIgnoreCase("o") ||
                     a.equalsIgnoreCase("u") );
-            System.out.println(vowelCheck);
+//            System.out.println(vowelCheck);
             return vowelCheck;
         }
+        //Write a method named hasVowels() that accepts a string of any length and returns a boolean if
+        // there are any vowels in that string.
+        public static boolean hasVowel(String a) {
+            for (int i=0;i<a.length();i++){
+                String letter = Character.toString(a.charAt(i));
+                if(isVowel(letter)){
+                    System.out.println(true);
+                    return true;}
+            }
+            System.out.println(false);
+            return false;
+        }
+
+    //Write a method named hasVowels() that accepts a string of any length and returns a boolean if
+    // there are any vowels in that string.
+    public static int countVowels(String a) {
+        int vowels = 0;
+        for (int i = 0; i < a.length(); i++) {
+            String letter = Character.toString(a.charAt(i));
+            if (isVowel(letter)) {
+                vowels++;
+            }
+        }System.out.println(vowels);
+        return vowels;
+    }
     //END OF EVERYTHING
 }

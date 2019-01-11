@@ -70,7 +70,7 @@ public class MethodsExercises {
 //        return total;
 //    }
 
-    public static int factorial(int a){
+    public static int factorials(int a){
         Scanner scan = new Scanner(System.in).useDelimiter("\n");
         System.out.println("Please enter a number between one and 10.");
         int userInput= scan.nextInt();
@@ -89,6 +89,15 @@ public class MethodsExercises {
         System.out.println(result);
         return total;
     }
+    public static int factorial(int number){
+        int result = 1;
+        do{
+            result *= number;
+            number--;
+        }while(number>=1);
+        return result;
+    }
+
     public static String diceRoller() {
         Scanner scan = new Scanner(System.in).useDelimiter("\n");
         boolean begin;
