@@ -32,14 +32,20 @@ public class Person {
     public Person(String name) {
         this.name = name;
     }
+
+    // GETTER
     // returns the person's name
     public String getName(){
         return this.name;
     }
+
+    //SETTER
     // changes the name property to the passed value
     public void setName(String name){
         this.name = name;
     }
+
+    // GREETING METHOD
     // prints a message to the console using the person's name
     public void sayHello(){
         System.out.println("Hello, " + name + "!");

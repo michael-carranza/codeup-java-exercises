@@ -1,42 +1,28 @@
 package shapes;
 
-import util.Input;
-
 public class Circle {
+private static int numberOfCircles=0;
 
-    public static void main(String[] args) {
-        System.out.println("What is your circle's radius?");
-        int radius = Input.getInt();
-        Circle myCircle = new Circle(radius);
-
-        System.out.println("Your circle has a radius of: ");
-        System.out.println(radius);
-
-        System.out.println("Your circle has an area of: ");
-        System.out.println(myCircle.getArea());
-
-        System.out.println("Your circle has a circumference of: ");
-        System.out.println(myCircle.getCircumference());
+    public Circle (double radius) {
+        this.radius = radius;
+        numberOfCircles++;
     }
 
-    private double getArea() {
-        double radius = this.radius;
-        double area = Math.PI * (radius * radius);
-        return area;
+    public double getArea() {
+        return Math.PI * Math.pow(radius, 2);
     }
-
 
     private double radius;
     // constructor
 
-    public Circle(double radius) {
-        this.radius = radius;
+    public double getRadius(){
+        return this.radius;
     }
+
 
     public double getCircumference(){
         double radius = this.radius;
-        double circumference = Math.PI * (radius * 2);
-        return circumference;
+        return (Math.PI * (radius * 2));
     }
 //END OF EVERYTHING
     }

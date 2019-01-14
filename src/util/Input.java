@@ -6,33 +6,42 @@ public class Input {
     public static void main(String[] args) {
     getString();
     yesNo();
-    getInt(1,50);
+    getInt(1,50, "Please enter a number.");
     getInt();
-    getDouble(1,50);
+    getDouble(1,50,"Please enter a number.");
     getDouble();
     }
     public static String getString(){
     Scanner scan = new Scanner(System.in).useDelimiter("\n");
-        System.out.println("Please enter a message.");
-        String userInput = scan.next();
-        System.out.println(userInput);
-        return userInput;
+        return scan.next();
+    }
+    public static String getString(String prompt){
+        Scanner scan = new Scanner(System.in).useDelimiter("\n");
+        System.out.println(prompt);
+        return scan.next();
     }
     public static boolean yesNo(){
         Scanner scan = new Scanner(System.in).useDelimiter("\n");
-        System.out.println("Yes or no?");
         String check = scan.next();
-        System.out.println((check.equalsIgnoreCase("yes")) || (check.equalsIgnoreCase("y")));
+        return (check.equalsIgnoreCase("yes")) || (check.equalsIgnoreCase("y"));
+    }
+    public static boolean yesNo(String prompt){
+        System.out.println(prompt);
+        Scanner scan = new Scanner(System.in).useDelimiter("\n");
+        String check = scan.next();
         return (check.equalsIgnoreCase("yes")) || (check.equalsIgnoreCase("y"));
     }
     public static int getInt(int min, int max){
         Scanner scan = new Scanner(System.in).useDelimiter("\n");
-        System.out.println("Choose a number between " + min + " and " + max);
         int input = scan.nextInt();
         if ((input >= min)&&(input<=max)){
             return input;
         } else getInt(min, max);
         return input;
+    }
+    public static int getInt(int min, int max, String prompt) {
+        System.out.println(prompt);
+        return getInt(min, max);
     }
     public static int getInt(){
         Scanner scan = new Scanner(System.in).useDelimiter("\n");
@@ -42,13 +51,17 @@ public class Input {
     }
     public static double getDouble(double min, double max){
         Scanner scan = new Scanner(System.in).useDelimiter("\n");
-        System.out.println("Choose a number between " + min + " and " + max);
         double input = scan.nextDouble();
         if ((input >= min)&&(input<=max)){
             return input;
         } else getDouble(min, max);
         return input;
     }
+    public static double getDouble(double min, double max, String prompt){
+        System.out.println(prompt);
+        return getDouble(min, max);
+    }
+
     public static double getDouble(){
         Scanner scan = new Scanner(System.in).useDelimiter("\n");
         System.out.println("Please enter a number.");
