@@ -1,3 +1,5 @@
+package src;
+
 public class Person {
     public static void main(String[] args) {
         // Call methods here
