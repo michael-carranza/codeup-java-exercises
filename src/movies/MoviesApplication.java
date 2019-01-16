@@ -6,6 +6,8 @@ public class MoviesApplication {
         static Movie[] movies = MoviesArray.findAll();
 
     public static void main(String[] args) {
+        boolean keepGoing = false;
+    do {
         System.out.println("What would you like to do?\n");
         System.out.println("0 - Exit");
         System.out.println("1 - View All Movies");
@@ -15,27 +17,33 @@ public class MoviesApplication {
         System.out.println("5 - View All Sci-Fi Movies");
         System.out.println();
         int choice = Input.getInt(0, 5, "Please make a selection.");
-        if (choice == 1){
+        if (choice == 0){keepGoing=false;}
+        if (choice == 1) {
             System.out.println("You have selected ALL categories.");
             display(movies);
+             keepGoing = Input.yesNo("Would you like to search again?");
         }
-        if (choice == 2){
+        if (choice == 2) {
             System.out.println("You have selected the ANIMATED category.");
             searchBy("animated");
+             keepGoing = Input.yesNo("Would you like to search again?");
         }
-        if (choice == 3){
+        if (choice == 3) {
             System.out.println("You have selected the DRAMA category.");
             searchBy("drama");
+            keepGoing = Input.yesNo("Would you like to search again?");
         }
-        if (choice == 4){
+        if (choice == 4) {
             System.out.println("You have selected the HORROR category.");
             searchBy("horror");
+            keepGoing = Input.yesNo("Would you like to search again?");
         }
-        if (choice == 5){
+        if (choice == 5) {
             System.out.println("You have selected the SCI-FI category.");
             searchBy("scifi");
+            keepGoing = Input.yesNo("Would you like to search again?");
         }
-
+    }while (keepGoing);
     }
     public static int arraySize(String category){
         int arraySize=0;
@@ -64,7 +72,7 @@ public class MoviesApplication {
         System.out.println("We found " + result.length + " movies in our list.");
         System.out.println("Here they are:");
         for(int i = 0;i<result.length;i++){
-            System.out.println(result[i].getTitle());
+            System.out.println(result[i].getTitle() + " -- " + result[i].getCategory());
         }
     }
     // END OF EVERYTHING
