@@ -4,7 +4,7 @@ public class DungeonGame {
         Scanner scan = new Scanner(System.in).useDelimiter("\n");
         boolean keepGoing=true;
         int choice;
-            System.out.println("What is your name, Paladin?");
+            System.out.println("What is your title, Paladin?");
             String charName= scan.next();
             System.out.println("Your adventure begins now, " + charName +". \nAre you ready to begin?");
             String embark = scan.next();

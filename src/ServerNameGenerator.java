@@ -6,7 +6,7 @@ public class ServerNameGenerator {
     String[] nouns = {"cuttlefish", "crab", "conch", "crustacean", "carp",    "catfish", "clownfish", "cod", "clam", "coelocanth" };
     // STRING ARRAYS CREATED
     // METHOD CALLS GO HERE
-        System.out.println("Here is your new server name:");
+        System.out.println("Here is your new server title:");
         generateServerName(adjectives, nouns);
     }
     // BUILD METHODS HERE

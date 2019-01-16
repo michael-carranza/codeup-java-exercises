@@ -16,9 +16,9 @@ public class ArraysExercises {
         // ARRAY INITIALIZED
         Person[] people = new Person[3];
         //PEOPLE GENERATED DIRECTLY INTO ARRAY
-        people[0]= new Person(Input.getString("Please enter a name."));
-        people[1] = new Person(Input.getString("Please enter a name."));
-        people[2] = new Person(Input.getString("Please enter a name."));
+        people[0]= new Person(Input.getString("Please enter a title."));
+        people[1] = new Person(Input.getString("Please enter a title."));
+        people[2] = new Person(Input.getString("Please enter a title."));
         System.out.println(people.length);
         Person[] newPeople = addPerson(people);
         people = newPeople;
@@ -34,7 +34,7 @@ public class ArraysExercises {
             newPeople[i] = people[i];
             i++;
         }
-        newPeople[length]= new Person(Input.getString("Please enter a name."));
+        newPeople[length]= new Person(Input.getString("Please enter a title."));
             return newPeople;
         }
         //END OF EVERYTHING

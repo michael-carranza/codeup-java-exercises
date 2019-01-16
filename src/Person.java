@@ -12,7 +12,7 @@ public class Person {
        // TEST 1
 //        Person person1 = new Person("John");
 //        Person person2 = new Person("John");
-//        System.out.println(person1.getName().equals(person2.getName()));
+//        System.out.println(person1.getTitle().equals(person2.getTitle()));
 //        System.out.println(person1 == person2);
         // TEST 2
 //        Person person1 = new Person("John");
@@ -21,11 +21,11 @@ public class Person {
         // TEST 3
 //        Person person1 = new Person("John");
 //        Person person2 = person1;
-//        System.out.println(person1.getName());
-//        System.out.println(person2.getName());
-//        person2.setName("Jane");
-//        System.out.println(person1.getName());
-//        System.out.println(person2.getName());
+//        System.out.println(person1.getTitle());
+//        System.out.println(person2.getTitle());
+//        person2.setTitle("Jane");
+//        System.out.println(person1.getTitle());
+//        System.out.println(person2.getTitle());
     }
     //build methods & objects here
 
@@ -36,19 +36,19 @@ public class Person {
     }
 
     // GETTER
-    // returns the person's name
+    // returns the person's title
     public String getName(){
         return this.name;
     }
 
     //SETTER
-    // changes the name property to the passed value
+    // changes the title property to the passed value
     public void setName(String name){
         this.name = name;
     }
 
     // GREETING METHOD
-    // prints a message to the console using the person's name
+    // prints a message to the console using the person's title
     public void sayHello(){
         System.out.println("Hello, " + name + "!");
     }
