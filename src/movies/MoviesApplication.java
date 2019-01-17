@@ -1,6 +1,7 @@
 package src.movies;
 import util.Input;
-import java.util.Arrays;
+
+
 
 public class MoviesApplication {
         static Movie[] movies = MoviesArray.findAll();
@@ -15,6 +16,7 @@ public class MoviesApplication {
         System.out.println("3 - View All Drama Movies");
         System.out.println("4 - View All Horror Movies");
         System.out.println("5 - View All Sci-Fi Movies");
+//        System.out.println("6 - Add a Movie");
         System.out.println();
         int choice = Input.getInt(0, 5, "Please make a selection.");
         if (choice == 0){keepGoing=false;}
@@ -43,6 +45,11 @@ public class MoviesApplication {
             searchBy("scifi");
             keepGoing = Input.yesNo("Would you like to search again?");
         }
+//        if (choice == 6) {
+//            System.out.println("You have chosen to add a movie.");
+//            movies=addMovie(movies);
+//            keepGoing = Input.yesNo("Would you like to search for a movie?");
+//        }
     }while (keepGoing);
     }
     public static int arraySize(String category){
@@ -75,5 +82,26 @@ public class MoviesApplication {
             System.out.println(result[i].getTitle() + " -- " + result[i].getCategory());
         }
     }
+
+//    public static Movie[] addMovie(Movie[] movies){
+//            System.out.println("Adding a new movie now.");
+//        Scanner scan = new Scanner(System.in).useDelimiter("\n");
+//        System.out.println("Please enter a movie title.");
+//        String newTitle = scan.next();
+//        System.out.println("Please enter a movie category.");
+//        String newCategory = scan.next();
+//
+//            int length = movies.length;
+//            Movie[] newMovies = new Movie[length+1];
+//            int i = 0;
+//            while (i<movies.length) {
+//                newMovies[i] = movies[i];
+//                i++;
+//            }
+//            newMovies[length+1]= new Movie(newTitle,newCategory);
+//            return newMovies;
+//        }
+
+
     // END OF EVERYTHING
 }

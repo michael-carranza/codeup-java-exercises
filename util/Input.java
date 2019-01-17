@@ -13,12 +13,13 @@ public class Input {
     }
     public static String getString(){
     Scanner scan = new Scanner(System.in).useDelimiter("\n");
-        return scan.next();
+        String input = scan.next();
+        return input;
     }
     public static String getString(String prompt){
         Scanner scan = new Scanner(System.in).useDelimiter("\n");
         System.out.println(prompt);
-        return scan.next();
+        return getString();
     }
     public static boolean yesNo(){
         Scanner scan = new Scanner(System.in).useDelimiter("\n");

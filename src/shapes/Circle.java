@@ -1,4 +1,4 @@
-package shapes;
+package src.shapes;
 
 public class Circle {
 private static int numberOfCircles=0;
