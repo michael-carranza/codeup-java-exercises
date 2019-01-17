@@ -2,11 +2,16 @@ package src.shapes;
 
 public class ShapesTest {
     public static void main(String[] args) {
-        Rectangle box1 = new Rectangle(4,5);
-        Rectangle.print(box1);
+        Measurable shape;
 
-        Square box2 = new Square(5);
-        Rectangle.print(box2);
+        shape = new Square(4);
+        System.out.println("Area: " + shape.getArea());
+        System.out.println("Perimeter: " + shape.getPerimeter());
 
+        Measurable myShape = new Rectangle(11, 17);
+        System.out.println("Area: " + myShape.getArea());
+        System.out.println("Perimeter: " + myShape.getPerimeter());
+
+//        myShape.getLength();
     }
 }

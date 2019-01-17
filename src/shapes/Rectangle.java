@@ -2,42 +2,32 @@ package src.shapes;
 import src.shapes.Drawable;
 import src.shapes.Printable;
 
-public class Rectangle implements Printable, Drawable {
-    protected int length;
-    protected int width;
+public class Rectangle extends Quadrilateral implements Measurable {
 
-    public Rectangle (int length, int width) {
-        this.length = length;
-        this.width = width;
+    public Rectangle(double length, double width) {
+        super(length, width);
     }
 
-    public static int getWidth(Rectangle rectangle) {
-       return rectangle.width;
+    public void print() {
     }
-    public static int getLength(Rectangle rectangle) {return rectangle.length; }
-
-    public void main(String[] args) {
-       Rectangle rectangle = new Rectangle(2,4);
-    }
-
-    public static int getArea(Rectangle rectangle) { return (rectangle.length * rectangle.width); }
-
-    public static int getPerimeter(Rectangle rectangle) { return ((2 * rectangle.length) + (2 * rectangle.width)); }
-
-    public void draw(){
-        System.out.println("Here is my drawing.");
+    @Override
+    public void setLength(double length) {
+        this.length=length;
     }
 
     @Override
-    public void print() {
-        System.out.println("Here is my printout.");
+    public void setWidth(double width) {
+        this.width=width;
     }
 
-    public static void print(Rectangle rectangle) {
-        System.out.println("Your rectangle has a length of " + rectangle.length +" and a width of " + rectangle.width);
-        System.out.println("The area of your rectangle is: " + getArea(rectangle));
-        System.out.println("The perimeter of your rectangle is: " + getPerimeter(rectangle));
+    @Override
+    public double getPerimeter() {
+        return 2 * width + 2 * length;
     }
 
+    @Override
+    public double getArea() {
+        return width * length;
+    }
 //END OF EVERYTHING
 }
