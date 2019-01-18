@@ -32,27 +32,27 @@ public class GradesApplication {
         students.put("NotTheAssistantManager", chris);
         students.put("MissFrizzle", yourMom);
 
+        boolean keepGoing=false;
+    do {
         System.out.println("Welcome!\n");
         System.out.println("Here are some of the github usernames of our students:\n");
         System.out.println(students.keySet());
 
-        Set<String> keys = students.keySet();
-        String[] keysArray = keys.toArray(new String[keys.size()]);
-        System.out.println(keysArray[1]);
-
-
         String search = Input.getString("\nWhat student would you like more information on?\n");
-            if (students.containsKey(search)) {
-                Student result = students.get(search);
-                String resultName = result.name;
-                String userName = getKey(students,result);
-                System.out.println("GitHub Username: " + userName);
-                System.out.println("Student name: " + result.name);
-                System.out.println("Grade Average: " + result.getGradeAverage());
+        if (students.containsKey(search)) {
+            Student result = students.get(search);
+            String resultName = result.name;
+            String userName = getKey(students, result);
+            System.out.println("GitHub Username: " + userName);
+            System.out.println("Student name: " + result.name);
+            System.out.println("Grade Average: " + result.getGradeAverage());
+            keepGoing = Input.yesNo("\nWould you like to search for another student?");
 
-            } else{
+        } else {
             System.out.println("Sorry. We don't have a student named " + search + ".\n");
+            keepGoing = Input.yesNo("\nWould you like to search for another student?");
         }
+    }while(keepGoing);
     }
     public static <K, V> K getKey(HashMap<K, V> students, Student result) {
         for (K key : students.keySet()) {
@@ -62,4 +62,5 @@ public class GradesApplication {
         }
         return null;
     }
+
 }
