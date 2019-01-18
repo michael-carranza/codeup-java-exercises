@@ -42,8 +42,8 @@ public class GradesApplication {
         if (students.containsKey(search)) {
             Student result = students.get(search);
             String resultName = result.name;
-            String userName = getKey(students, result);
-            System.out.println("GitHub Username: " + userName);
+//            String userName = getKey(students, result);
+            System.out.println("GitHub Username: " + search);
             System.out.println("Student name: " + result.name);
             System.out.println("Grade Average: " + result.getGradeAverage());
             keepGoing = Input.yesNo("\nWould you like to search for another student?");
@@ -54,13 +54,13 @@ public class GradesApplication {
         }
     }while(keepGoing);
     }
-    public static <K, V> K getKey(HashMap<K, V> students, Student result) {
-        for (K key : students.keySet()) {
-            if (result.equals(students.get(key))) {
-                return key;
-            }
-        }
-        return null;
-    }
+//    public static <K, V> K getKey(HashMap<K, V> students, Student result) {
+//        for (K key : students.keySet()) {
+//            if (result.equals(students.get( key))) {
+//                return key;
+//            }
+//        }
+//        return null;
+//    }
 
 }
