@@ -3,7 +3,7 @@ package src.grades;
 import java.util.ArrayList;
 
 public class Student {
-    private String name;
+    protected String name;
     private ArrayList<Integer> grades;
 
     public static void main(String[] args) {
