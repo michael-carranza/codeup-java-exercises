@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 public class Input {
     public static void main(String[] args) {
-    getString();
-    yesNo();
+//    getString();
+//    yesNo();
     getInt(1,50, "Please enter a number.");
-    getInt();
-    getDouble(1,50,"Please enter a number.");
-    getDouble();
+//    getInt();
+//    getDouble(1,50,"Please enter a number.");
+//    getDouble();
     }
     public static String getString(){
     Scanner scan = new Scanner(System.in).useDelimiter("\n");
@@ -32,13 +32,20 @@ public class Input {
         String check = scan.next();
         return (check.equalsIgnoreCase("yes")) || (check.equalsIgnoreCase("y"));
     }
-    public static int getInt(int min, int max){
+    public static int getInt(int min, int max) {
         Scanner scan = new Scanner(System.in).useDelimiter("\n");
-        int input = scan.nextInt();
-        if ((input >= min)&&(input<=max)){
-            return input;
-        } else getInt(min, max);
-        return input;
+            String input = scan.next();
+            int num = 0;
+        try{
+            num = Integer.valueOf(input);
+            if ((num >= min) && (num <= max)) {
+                return num;
+            } else getInt(min, max);
+            return num;
+        } catch (NumberFormatException ex) {
+            System.out.println(ex);
+        }
+        return num;
     }
     public static int getInt(int min, int max, String prompt) {
         System.out.println(prompt);
@@ -46,17 +53,31 @@ public class Input {
     }
     public static int getInt(){
         Scanner scan = new Scanner(System.in).useDelimiter("\n");
-        System.out.println("Please enter a number.");
-        int input = scan.nextInt();
-        return input;
+//        System.out.println("Please enter a number.");
+            String input = scan.next();
+            int check = 0;
+        try {
+            check = Integer.valueOf(input);
+            return check;
+        } catch (NumberFormatException ex) {
+            System.out.println("Please make sure your number is a valid integer in numerals.");
+            return getInt();
+        }
     }
     public static double getDouble(double min, double max){
         Scanner scan = new Scanner(System.in).useDelimiter("\n");
-        double input = scan.nextDouble();
-        if ((input >= min)&&(input<=max)){
-            return input;
-        } else getDouble(min, max);
-        return input;
+        String input = scan.next();
+        double num = 0;
+        try{
+            num = Double.valueOf(input);
+            if ((num >= min) && (num <= max)) {
+                return num;
+            } else getDouble(min, max);
+            return num;
+        } catch (NumberFormatException ex) {
+            System.out.println(ex);
+        }
+        return num;
     }
     public static double getDouble(double min, double max, String prompt){
         System.out.println(prompt);
@@ -66,8 +87,16 @@ public class Input {
     public static double getDouble(){
         Scanner scan = new Scanner(System.in).useDelimiter("\n");
         System.out.println("Please enter a number.");
-        double input = scan.nextDouble();
-        return input;
+        String input = scan.next();
+        double check = 0;
+        try {
+            check = Double.valueOf(input);
+            return check;
+        } catch (NumberFormatException ex) {
+            System.out.println(ex);
+        }
+        System.out.println(check);
+        return check;
     }
         // END OF EVERYTHING
 
